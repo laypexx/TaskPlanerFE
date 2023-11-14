@@ -1,0 +1,59 @@
+<p-toast></p-toast>
+<div class="tasklist-container">
+  <div class="left-side">
+    <h2>Anstehende Aufgaben:</h2>
+    <app-tasklist
+      [tasks]="pendingTasks"
+      (markTaskAsCompleted)="markTaskAsCompleted($event)"
+      (editTask)="editTask($event)"
+      (deleteTask)="deleteTask($event)"
+    ></app-tasklist>
+  </div>
+
+  <div class="right-side">
+    <div class="right-top">
+      <h2>Abgelaufene Aufgaben:</h2>
+      <app-tasklist
+        [tasks]="expiredTasks"
+        [accordionClosed]="true"
+        (markTaskAsCompleted)="markTaskAsCompleted($event)"
+        (editTask)="editTask($event)"
+        (deleteTask)="deleteTask($event)"
+      ></app-tasklist>
+    </div>
+
+    <div class="right-bottom">
+      <h2>Abgeschlossene Aufgaben:</h2>
+      <app-tasklist
+        [tasks]="doneTasks"
+        [accordionClosed]="true"
+        (markTaskAsCompleted)="markTaskAsCompleted($event)"
+        (editTask)="editTask($event)"
+        (deleteTask)="deleteTask($event)"
+        [showMarkAsCompletedButton]="false"
+        [showEditButton]="false"
+      ></app-tasklist>
+    </div>
+  </div>
+</div>
+
+<div class="taskcreate-container">
+  <h2>{{ title }}</h2>
+  <input
+    type="text"
+    class="input1"
+    [(ngModel)]="inputValueDescription"
+    placeholder="Description"
+  />
+
+  <p-calendar
+    [(ngModel)]="dateFromDatePicker"
+    [showButtonBar]="true"
+    dateFormat="yy-mm-dd"
+    class="datepicker"
+    placeholder="Datum auswählen..."
+  ></p-calendar>
+
+  <br />
+  <p-button type="button" (click)="saveTask()"> Aufgabe speichern </p-button>
+</div>

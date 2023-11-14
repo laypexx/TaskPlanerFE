@@ -1,0 +1,22 @@
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.button-container p-button {
+  margin-top: 10px;
+  width: 100%;
+}
+
+.button-container p-button .p-button {
+  width: 100%;
+}
+
+.button-container p-button:first-child {
+  margin-top: 0;
+}
+
+.accordion-container {
+  margin: 20px;
+}

@@ -1,0 +1,34 @@
+<div class="accordion-container">
+  <p-accordion [activeIndex]="accordionClosed ? -1 : 0">
+    <p-accordionTab
+      *ngFor="let task of tasks; let i = index"
+      header="{{ task.description }}"
+    >
+      <p>Fertigstellungsdatum: {{ task.dueDate }}</p>
+
+      <div class="button-container">
+        <p-button
+          label="Aufgabe als erledigt markieren"
+          class="btn-markieren"
+          icon="pi pi-check"
+          (onClick)="markAsCompleted(task.id)"
+          *ngIf="showMarkAsCompletedButton"
+        ></p-button>
+
+        <p-button
+          label="Aufgabe bearbeiten"
+          class="btn-bearbeiten"
+          (onClick)="edit(task.description, task.dueDate, task.id)"
+          *ngIf="showEditButton"
+        ></p-button>
+
+        <p-button
+          label="Aufgabe löschen"
+          class="btn-loeschen"
+          severity="danger"
+          (onClick)="delete(task.id)"
+        ></p-button>
+      </div>
+    </p-accordionTab>
+  </p-accordion>
+</div>

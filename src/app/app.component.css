@@ -1,0 +1,19 @@
+h1 {
+  font-size: 60px;
+  font-weight: 600;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-image: linear-gradient(to left, #553c9a, #b393d3);
+  color: transparent;
+  background-clip: text;
+  text-align: center;
+  -webkit-background-clip: text;
+  background-image: conic-gradient(
+    #553c9a 0%,
+    #553c9a 33%,
+    #ee4b2b 33%,
+    #ee4b2b 66%,
+    #00c2cb 66%,
+    #00c2cb 99%
+  );
+  padding: 30px;
+}
